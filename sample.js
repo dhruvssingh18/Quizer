@@ -10,7 +10,7 @@ import 'dotenv/config';
 const app = express();
 
 
-const token = process.env.GITHUB_PAT; 
+const token = process.env.RLChatbot; 
 const endpoint = "https://models.github.ai/inference";
 const model = "gpt-4o";
 const __filename = fileURLToPath(import.meta.url);
