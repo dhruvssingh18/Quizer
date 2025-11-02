@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <title>Flip Card Slider + Quiz</title>
+  <link rel="stylesheet" href="actor.css" />
+</head>
+<body>
+
+    <header>
+            <h1>RL LEARNER</h1> 
+            <nav>
+    
+                <ul class = "nav_links">
+                   <a href ="index.html">POLICY</a>
+                    <a href ="value.html">VALUE</a>
+                    <a href ="actor.html">ACTOR</a>
+               
+                </ul>
+            
+            </nav>
+            <div class="cta" onclick="window.location.href='http://localhost:5000/'">
+                <button>Back</button>
+            </div>
+            
+        </header>
+
+  <section class="sectionOne">
+    <h3>Actor<h3> 
+    <h4>Learn Reinforcement Learning</h4>
+
+    <div class="slider-container">
+      <button class="nav-btn" id="prev-slide">&#8592;</button>
+
+      <div class="slider">
+        <!-- Card 1 -->
+        <div class="box active">
+          <div class="flip-inner">
+            <div class="front">
+              <h6>What is Reinforcement Learning?</h6>
+            </div>
+            <div class="back">
+              <p>
+                Unlike supervised learning, where the model learns from labeled data, 
+                or unsupervised learning, which finds patterns in unlabeled data, 
+                reinforcement learning is about learning through trial and error. 
+                An agent interacts with an environment and learns a policy to maximize cumulative reward over time.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="flip-inner">
+            <div class="front">
+              <h6>What are the Real World Applications of RL?</h6>
+            </div>
+            <div class="back">
+              <p>
+                RL is used in robotics (autonomous control), game AI (like AlphaGo), finance (trading strategies), 
+                healthcare (treatment planning), and recommendation systems (personalized content delivery), among others.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="flip-inner">
+            <div class="front">
+              <h6>What is an Agent in Reinforcement Learning?</h6>
+            </div>
+            <div class="back">
+              <p>
+                In reinforcement learning, an agent is the entity that makes decisions by interacting with an environment. 
+                It observes the current state, takes an action based on a learned policy, and receives feedback 
+                in the form of a reward and the next state. 
+                The agent's goal is to learn a strategy that maximizes cumulative rewards over time through trial and error.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+
+      <button class="nav-btn" id="next-slide">&#8594;</button>
+    </div>
+  </section>
+
+  <div class="quiz-container">
+    <h2 id="question">Question text</h2>
+    <div id="answer-buttons"></div>
+    <button id="quiz-next-btn">Next</button>
+  </div>
+
+  <div class="progress-container">
+    <div class="progress-bar" id="progress-bar"></div>
+</div>
+
+<a style = "width:220px;text-align:center;margin-left:-966px;margin-top:-95px;"onclick="toggleDiv()" class="btn">RLGPT Chatbot</a>
+<a style = "width:255px;text-align:center;margin-left:-420px;margin-top:-52px;"onclick="#" class="btn">Download Flashcards</a>
+
+ <div id="chatter" class="chat-container">
+  <div id="chat-box"></div>
+  <div id="input-area">
+    <input class="messageInput" type="text" id="message" placeholder="Type your message..." />
+    <button class="sendBtn" id="send">Send</button>
+  </div>
+</div>
+  <script src="scriptactor.js"></script>
+</body>
+</html>

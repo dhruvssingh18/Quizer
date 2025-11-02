@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <title>Flip Card Slider + Quiz</title>
+  <link rel="stylesheet" href="value.css" />
+</head>
+<body>
+
+    <header>
+            <h1>RL LEARNER</h1> 
+            <nav>
+    
+                <ul class = "nav_links">
+                 <a href ="index.html">POLICY</a>
+                    <a href ="value.html">VALUE</a>
+                    <a href ="actor.html">ACTOR</a>
+               
+                </ul>
+            
+            </nav>
+            <div class="cta" onclick="window.location.href='http://localhost:5000/'">
+                <button>Back</button>
+            </div>
+            
+        </header>
+
+  <section class="sectionOne">
+    <h3>Value<h3> 
+    <h4>Learn Reinforcement Learning</h4>
+
+    <div class="slider-container">
+      <button class="nav-btn" id="prev-slide">&#8592;</button>
+
+      <div class="slider">
+        <!-- Card 1 -->
+        <div class="box active">
+          <div class="flip-inner">
+            <div class="front">
+              <h6> Q-Learning </h6>
+            </div>
+            <div class="back">
+              <p>
+             An off-policy algorithm that learns the optimal action-value function by iteratively updating Q-values based on the Bellman equation and selecting the highest-value action. 
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="flip-inner">
+            <div class="front">
+              <h6>Deep Q-Network (DQN) </h6>
+            </div>
+            <div class="back">
+              <p>
+                Uses a deep neural network to approximate the Q-function, enabling Q-learning to work in high-dimensional state spaces like images. 
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="flip-inner">
+            <div class="front">
+              <h6>Fitted Q-Iteration </h6>
+            </div>
+            <div class="back">
+              <p>
+               A batch reinforcement learning method that repeatedly applies supervised learning to update Q-values from collected data, rather than learning online. 
+              </p>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="box">
+          <div class="flip-inner">
+            <div class="front">
+              <h6>R-Max</h6>
+            </div>
+            <div class="back">
+              <p>
+              A model-based RL algorithm that assumes unknown states have maximum possible reward until explored, encouraging exploration. 
+              </p>
+            </div>
+          </div>
+        </div>
+
+         <div class="box">
+          <div class="flip-inner">
+            <div class="front">
+              <h6>Prioritized Experience Replay DQN </h6>
+            </div>
+            <div class="back">
+              <p>
+              An improvement to DQN that samples more important experiences (with higher TD error) more often from the replay buffer to speed up learning. 
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="flip-inner">
+            <div class="front">
+              <h6>SARSA (State–Action–Reward–State–Action)</h6>
+            </div>
+            <div class="back">
+              <p>
+              An on-policy method that updates Q-values using the action actually taken by the current policy, leading to more conservative learning. 
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="flip-inner">
+            <div class="front">
+              <h6> Monte Carlo Value Iteration </h6>
+            </div>
+            <div class="back">
+              <p>
+              A value estimation approach that uses complete episodes to estimate returns without bootstrapping, updating value estimates after each episode. 
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="flip-inner">
+            <div class="front">
+              <h6>Double DQN </h6>
+            </div>
+            <div class="back">
+              <p>
+              Addresses DQN’s overestimation bias by decoupling the action selection from the value evaluation during updates. 
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="flip-inner">
+            <div class="front">
+              <h6> Dueling DQN </h6>
+            </div>
+            <div class="back">
+              <p>
+              Splits the Q-value function into two streams—one for the state value and one for the advantage function—improving learning efficiency.
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <button class="nav-btn" id="next-slide">&#8594;</button>
+    </div>
+  </section>
+
+  <div class="quiz-container">
+    <h2 id="question">Question text</h2>
+    <div id="answer-buttons"></div>
+    <button id="quiz-next-btn">Next</button>
+  </div>
+
+  <div class="progress-container">
+    <div class="progress-bar" id="progress-bar"></div>
+</div>
+
+<a style = "width:220px;text-align:center;margin-left:-966px;margin-top:-95px;"onclick="toggleDiv()" class="btn">RLGPT Chatbot</a>
+<a style = "width:255px;text-align:center;margin-left:-420px;margin-top:-52px;"onclick="#" class="btn">Download Flashcards</a>
+
+ <div id="chatter" class="chat-container">
+  <div id="chat-box"></div>
+  <div id="input-area">
+    <input class="messageInput" type="text" id="message" placeholder="Type your message..." />
+    <button class="sendBtn" id="send">Send</button>
+  </div>
+</div>
+  <script src="scriptvalue.js"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <title>Flip Card Slider + Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <header>
+            <h1>RL LEARNER</h1> 
+            <nav>
+    
+                <ul class = "nav_links">
+                   <a href ="index.html">POLICY</a>
+                    <a href ="value.html">VALUE</a>
+                    <a href ="actor.html">ACTOR</a>
+               
+                </ul>
+            
+            </nav>
+            <div class="cta" onclick="window.location.href='http://localhost:5000/'">
+                <button>Back</button>
+            </div>
+            
+        </header>
+
+  <section class="sectionOne">
+    <h3>Policy<h3> 
+    <h4>Learn Reinforcement Learning</h4>
+
+    <div class="slider-container">
+      <button class="nav-btn" id="prev-slide">&#8592;</button>
+
+      <div class="slider">
+        <!-- Card 1 -->
+        <div class="box active">
+          <div class="flip-inner">
+            <div class="front">
+              <h6>Soft Q-Learning (SQL)</h6>
+            </div>
+            <div class="back">
+              <p>
+              A reinforcement learning algorithm that learns a stochastic policy by optimizing a soft version of the Bellman equation, adding an entropy term to encourage exploration and avoid premature convergence to suboptimal policies.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="flip-inner">
+            <div class="front">
+              <h6>Vanilla Policy Gradient (VPG) </h6>
+            </div>
+            <div class="back">
+              <p>
+               A basic policy optimization approach where gradients are computed directly from sampled trajectories to improve the probability of selecting good actions, without modifications like advantage estimation or constraints.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="flip-inner">
+            <div class="front">
+              <h6>Natural Policy Gradient (NPG)</h6>
+            </div>
+            <div class="back">
+              <p>
+                An improvement over vanilla policy gradient that preconditions updates using the Fisher Information Matrix, making policy updates more efficient and less sensitive to learning rate choices. 
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+         <div class="box">
+          <div class="flip-inner">
+            <div class="front">
+              <h6>Deterministic Policy Gradient (DPG) </h6>
+            </div>
+            <div class="back">
+              <p>
+               An algorithm that learns a deterministic (instead of stochastic) policy, making it efficient in continuous action spaces by directly mapping states to specific actions. 
+
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+           <div class="box">
+          <div class="flip-inner">
+            <div class="front">
+              <h6>Trust Region Policy Optimization (TRPO) </h6>
+            </div>
+            <div class="back">
+              <p>
+              A policy optimization method that constrains updates to stay within a "trust region" so that each update improves performance while avoiding destructive large policy changes. 
+
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+          <div class="box">
+          <div class="flip-inner">
+            <div class="front">
+              <h6>Proximal Policy Optimization (PPO) </h6>
+            </div>
+            <div class="back">
+              <p>
+             A simplified and more computationally efficient version of TRPO that uses a clipped surrogate objective to keep policy updates within a safe range while still allowing exploration. 
+
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="flip-inner">
+            <div class="front">
+              <h6> Relative Entropy Policy Search (REPS)</h6>
+            </div>
+            <div class="back">
+              <p>
+            An algorithm that optimizes a policy while keeping its divergence from the previous policy (measured by relative entropy/KL divergence) small, ensuring stable learning and balanced exploration.
+
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+
+      <button class="nav-btn" id="next-slide">&#8594;</button>
+    </div>
+  </section>
+
+  <div class="quiz-container">
+    <h2 id="question">Question text</h2>
+    <div id="answer-buttons"></div>
+    <button id="quiz-next-btn">Next</button>
+  </div>
+
+  <div class="progress-container">
+    <div class="progress-bar" id="progress-bar"></div>
+</div>
+
+<a style = "width:220px;text-align:center;margin-left:-966px;margin-top:-95px;"onclick="toggleDiv()" class="btn">RLGPT Chatbot</a>
+<a style = "width:255px;text-align:center;margin-left:-420px;margin-top:-52px;"onclick="#" class="btn">Download Flashcards</a>
+
+ <div id="chatter" class="chat-container">
+  <div class="rectangle-top"></div>
+  <h1 style = "background-color: transparent;margin-top:-42px;margin-left:20px; ">RLGPT Chatbot</h1>
+  <div id="chat-box"></div>
+
+  <div id="input-area">
+    <input class="messageInput" type="text" id="message" placeholder="Type your message..." />
+    <button class="sendBtn" id="send">Send</button>
+  </div>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
