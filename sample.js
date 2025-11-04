@@ -1,20 +1,18 @@
+// Load modules (CommonJS)
+const express = require("express");
+const path = require("path");
+const dotenv = require("dotenv");
+const fetch = require("node-fetch");
+const ModelClient = require("@azure-rest/ai-inference").default;
+const { isUnexpected } = require("@azure-rest/ai-inference");
+const { AzureKeyCredential } = require("@azure/core-auth");
 
-import fetch from "node-fetch";
-import ModelClient, { isUnexpected } from "@azure-rest/ai-inference";
-import { AzureKeyCredential } from "@azure/core-auth";
-import path from "path";
-import { fileURLToPath } from "url";
-import express from "express";
-import 'dotenv/config';
+dotenv.config(); // load .env variables
 
 const app = express();
-
-
-const token = process.env.RLChatbot; 
+const token = process.env.RLChatbot;
 const endpoint = "https://models.github.ai/inference";
 const model = "gpt-4o";
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 // Serve static files from assets folder
 app.use(express.static(path.join(__dirname, "assets")));
