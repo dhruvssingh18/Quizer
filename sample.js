@@ -1,4 +1,3 @@
-
 import fetch from "node-fetch";
 import ModelClient, { isUnexpected } from "@azure-rest/ai-inference";
 import { AzureKeyCredential } from "@azure/core-auth";
@@ -9,18 +8,23 @@ import 'dotenv/config';
 
 const app = express();
 
-
 const token = process.env.RLChatbot; 
-const endpoint = "https://models.github.ai/inference";
+const endpoint = "https://models.inference.ai.azure.com/"; // Fixed endpoint
 const model = "gpt-4o";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Serve static files from assets folder
+// Serve static files
+app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, "assets")));
-app.use(express.json()); // to parse JSON request bodies
+app.use(express.json());
 
 const client = ModelClient(endpoint, new AzureKeyCredential(token));
+
+// Root route - serve your HTML
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
 
 // API endpoint for chat
 app.post("/chat", async (req, res) => {
